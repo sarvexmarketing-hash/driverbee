@@ -1,0 +1,48 @@
+<svg width="400" height="800" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="800" rx="36" fill="#0A0E1A"/>
+  <rect x="2" y="2" width="396" height="796" rx="34" stroke="rgba(59,130,246,0.25)" stroke-width="2"/>
+  
+  <!-- Status pill -->
+  <rect x="110" y="40" width="180" height="36" rx="18" fill="rgba(59,130,246,0.15)" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="200" y="63" text-anchor="middle" fill="#3B82F6" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800">● LIVE TELEMETRY</text>
+  
+  <!-- Map Icon -->
+  <circle cx="200" cy="160" r="60" fill="rgba(59,130,246,0.1)"/>
+  <circle cx="200" cy="160" r="46" fill="rgba(59,130,246,0.2)" stroke="#3B82F6" stroke-width="2"/>
+  <text x="200" y="174" text-anchor="middle" font-size="44">🗺️</text>
+  
+  <!-- Title -->
+  <text x="200" y="260" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="900">Real-Time Tracking</text>
+  <text x="200" y="290" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="500">Live GPS & family trip sharing</text>
+  
+  <!-- Tracking Features -->
+  <g transform="translate(30, 330)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">📍</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Live Precision GPS</text>
+    <text x="75" y="52" fill="#3B82F6" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Updated every 1.5 seconds</text>
+  </g>
+  
+  <g transform="translate(30, 418)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">👨‍👩‍👧</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">One-Tap Family Share</text>
+    <text x="75" y="52" fill="#10B981" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Live route & ETA link via WhatsApp</text>
+  </g>
+  
+  <g transform="translate(30, 506)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">🚨</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Route Deviation Detection</text>
+    <text x="75" y="52" fill="#F59E0B" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Instant alert if route varies &gt; 500m</text>
+  </g>
+  
+  <!-- Live Trip Snapshot -->
+  <g transform="translate(30, 600)">
+    <rect width="340" height="140" rx="22" fill="rgba(59,130,246,0.12)" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#3B82F6" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" letter-spacing="1">LIVE SESSION ACTIVE</text>
+    <text x="24" y="70" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900">Bandra ➔ Airport T2</text>
+    <text x="24" y="96" fill="rgba(255,255,255,0.7)" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">ETA 24 mins • Current Speed 44 km/h</text>
+    <text x="24" y="122" fill="#10B981" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">● 2 Contacts viewing route live</text>
+  </g>
+</svg>

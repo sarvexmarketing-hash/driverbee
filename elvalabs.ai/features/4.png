@@ -1,0 +1,48 @@
+<svg width="400" height="800" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="800" rx="36" fill="#0A0E1A"/>
+  <rect x="2" y="2" width="396" height="796" rx="34" stroke="rgba(245,158,11,0.25)" stroke-width="2"/>
+  
+  <!-- Status pill -->
+  <rect x="110" y="40" width="180" height="36" rx="18" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="200" y="63" text-anchor="middle" fill="#F59E0B" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800">🛡️ 24/7 CONCIERGE</text>
+  
+  <!-- Support Icon -->
+  <circle cx="200" cy="160" r="60" fill="rgba(245,158,11,0.1)"/>
+  <circle cx="200" cy="160" r="46" fill="rgba(245,158,11,0.2)" stroke="#F59E0B" stroke-width="2"/>
+  <text x="200" y="174" text-anchor="middle" font-size="44">🎧</text>
+  
+  <!-- Title -->
+  <text x="200" y="260" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="900">24/7 Support & SOS</text>
+  <text x="200" y="290" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="500">Dedicated safety response team</text>
+  
+  <!-- Safety Features -->
+  <g transform="translate(30, 330)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">🚨</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Dedicated SOS Button</text>
+    <text x="75" y="52" fill="#EF4444" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Direct line to 24/7 command center</text>
+  </g>
+  
+  <g transform="translate(30, 418)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">🛡️</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">₹10 Lakh Car Insurance</text>
+    <text x="75" y="52" fill="#10B981" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Full transit protection coverage</text>
+  </g>
+  
+  <g transform="translate(30, 506)">
+    <rect width="340" height="72" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="36" y="45" font-size="26">🌙</text>
+    <text x="75" y="32" fill="#fff" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Late Night Return Guard</text>
+    <text x="75" y="52" fill="#F59E0B" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Chauffeur stays until you're inside safely</text>
+  </g>
+  
+  <!-- Concierge Banner -->
+  <g transform="translate(30, 600)">
+    <rect width="340" height="140" rx="22" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#F59E0B" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" letter-spacing="1">LIVE RESPONSE GUARANTEE</text>
+    <text x="24" y="70" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900">&lt; 15s Response Time</text>
+    <text x="24" y="96" fill="rgba(255,255,255,0.7)" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">Available 365 days, 24 hours a day</text>
+    <text x="24" y="122" fill="#10B981" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">📞 Call: +91 800-DRIVERBEE</text>
+  </g>
+</svg>
