@@ -23,7 +23,6 @@
     <link rel="modulepreload" crossorigin href="/assets/GravityBalls-D37pvzOo.js">
     <link rel="modulepreload" crossorigin href="/assets/press-center-CoyN8cpA.js">
     <link rel="modulepreload" crossorigin href="/assets/download-6UKj71yk.js">
-    <link rel="preload" as="image" href="/photos/driver_sprites.jpg?v=5">
     <link rel="stylesheet" crossorigin href="/assets/menu-DjKzWaJ3.css">
     <style>
         @media (max-width: 1024px) {
@@ -60,6 +59,21 @@
                 pointer-events: none !important;
                 user-select: none !important;
             }
+        }
+        #iphonecontent .iphonecontent__bg {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        #iphonecontent {
+            background: #080C14 !important;
+        }
+        .elva, .elva__pulse {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
     </style>
 </head>
@@ -177,7 +191,6 @@
     <!-- begin desktop content -->
     <div class="desktop-content">
         <div id="iphonecontent">
-            <div class="iphonecontent__bg"></div>
             <div class="video">
                 <video src="/C1405_optimized.mp4" muted playsinline loop autoplay preload></video>
             </div>

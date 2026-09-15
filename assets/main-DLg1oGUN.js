@@ -370,7 +370,7 @@ const cs = (e, t, s) => {
 };
 class ds {
     constructor(t) {
-        this.scene = t, this.ballCount = 7, this.balls = [], this.group = new Y, this.scene.add(this.group), this.centerTarget = {
+        this.scene = t, this.ballCount = 7, this.balls = [], this.group = new Y, this.group.visible = !1, this.scene.add(this.group), this.centerTarget = {
             x: 0,
             y: 0,
             z: 0
@@ -451,7 +451,7 @@ class ds {
                 }
             })
         }
-        this.setupPositions()
+        this.group.visible = !1, this.setupPositions()
     }
     setupPositions() {
         for (let s = 0; s < this.ballCount; s++) {
@@ -637,7 +637,7 @@ const ps = `
 `;
 class ms {
     constructor(t, s = null) {
-        this.scene = t, this.envMap = s, this.group = new Y, this.time = 0, this.mainBallRadius = 1.5, this.group.scale.setScalar(0)
+        this.scene = t, this.envMap = s, this.group = new Y, this.group.visible = !1, this.time = 0, this.mainBallRadius = 1.5, this.group.scale.setScalar(0)
     }
     async init() {
         return this.createMainBall(), this.scene.add(this.group), Promise.resolve()
@@ -693,7 +693,7 @@ class ms {
         this.group.position.set(t, s, n)
     }
     setScale(t) {
-        this.group.scale.setScalar(t)
+        this.group.scale.setScalar(0)
     }
     setVisible(t) {
         this.group.visible = t
@@ -2528,7 +2528,7 @@ function si(e) {
     e.timeline = A.timeline({
         paused: !0,
         onUpdate: () => {
-            e.timeline.progress(), e.settings.uShowGravityBalls = e.timeline.time() >= 1.7, e.settings.uShowGallery = e.timeline.time() >= 6
+            e.timeline.progress(), e.settings.uShowGravityBalls = !1, e.settings.uShowGallery = e.timeline.time() >= 6
         }
     }), e.timeline.to(e.textMeshes[0].position, {
         y: -15,
@@ -3026,7 +3026,7 @@ function ii(e) {
     e.timeline = A.timeline({
         paused: !0,
         onUpdate: () => {
-            e.settings.uShowGravityBalls = e.timeline.time() >= 1.7, e.settings.uShowGallery = e.timeline.time() >= 6
+            e.settings.uShowGravityBalls = !1, e.settings.uShowGallery = e.timeline.time() >= 6
         }
     }), e.timeline.to(e.textMeshes[0].position, {
         y: -15,
@@ -3472,13 +3472,13 @@ class li {
         this.mobile || (this.featureHover = new gs)
     }
     async initGravityBalls() {
-        this.gravityBallsScene = new Q, this.gravityBalls = new is(this.gravityBallsScene, this.camera, this.renderer), await this.gravityBalls.init(), this.addLights(this.gravityBallsScene), this.gravityBalls.flatProgress(1)
+        this.gravityBallsScene = new Q, this.gravityBallsScene.visible = !1, this.gravityBalls = new is(this.gravityBallsScene, this.camera, this.renderer), await this.gravityBalls.init(), this.gravityBalls.flatProgress(1)
     }
     async initGallery() {
         this.gallery = new ls(this.renderer, this.camera), await this.gallery.init()
     }
     async initStaticBalls() {
-        this.staticBallsScene = new Q, this.staticBalls = new ds(this.staticBallsScene), await this.staticBalls.init(), this.addLights(this.staticBallsScene), this.elvaOrb = new ms(this.staticBallsScene, this.envMap), this.elvaOrb.group.renderOrder = 10, await this.elvaOrb.init(), this.updateStaticBallsTarget()
+        this.staticBallsScene = new Q, this.staticBallsScene.visible = !1, this.staticBalls = new ds(this.staticBallsScene), this.staticBalls.group.visible = !1, await this.staticBalls.init(), this.elvaOrb = new ms(this.staticBallsScene, this.envMap), this.elvaOrb.group.renderOrder = 10, this.elvaOrb.group.visible = !1, await this.elvaOrb.init(), this.updateStaticBallsTarget()
     }
     updateStaticBallsTarget() {
         const t = document.querySelector(".elva");
@@ -3561,7 +3561,7 @@ class li {
             uCSSRotX: 0,
             uCSSRotY: 0,
             uCSSRotZ: 0,
-            uShowStaticBalls: !0,
+            uShowStaticBalls: !1,
             uStaticBallsProgress: 0,
             uCircleRadius: .3,
             uBgColorTop: new j(657930),
@@ -4158,7 +4158,7 @@ then relax on your way.`],
             const r = new O(this.settings.uCSSOffsetX * 1e3, this.settings.uCSSOffsetY * 1e3, this.settings.uCSSOffsetZ * 1e3);
             r.applyQuaternion(this.iphone.quaternion), this.cssObject.position.add(r), this.cssRenderer.render(this.cssScene, this.cssCamera)
         }
-        this.gravityBalls && this.settings.uShowGravityBalls && (this.gravityBalls.update(t), this.renderer.clearDepth(), this.renderer.render(this.gravityBallsScene, this.gravityBalls.camera)), this.staticBalls && this.settings.uShowStaticBalls && (this.elvaOrb && this.elvaOrb.update(t), this.renderer.clearDepth(), this.renderer.render(this.staticBallsScene, this.camera1)), this.gallery && this.settings.uShowGallery && (this.renderer.clearDepth(), this.gallery.update(t, this.gravityBalls.mouse, this.settings.uGalleryAppear, this.settings.uGalleryZoom, this.settings.uGalleryRotation), this.gallery.render()), this.perf && this.perf.end(), requestAnimationFrame(this.render.bind(this))
+        !1 && this.gravityBalls && (this.gravityBalls.update(t), this.renderer.clearDepth(), this.renderer.render(this.gravityBallsScene, this.gravityBalls.camera)), !1 && this.staticBalls && (this.elvaOrb && this.elvaOrb.update(t), this.renderer.clearDepth(), this.renderer.render(this.staticBallsScene, this.camera1)), this.gallery && this.settings.uShowGallery && (this.renderer.clearDepth(), this.gallery.update(t, this.gravityBalls.mouse, this.settings.uGalleryAppear, this.settings.uGalleryZoom, this.settings.uGalleryRotation), this.gallery.render()), this.perf && this.perf.end(), requestAnimationFrame(this.render.bind(this))
     }
 }
 var ve = {

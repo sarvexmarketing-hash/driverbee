@@ -432,12 +432,10 @@ canvas {
 }
 
 #iphonecontent .iphonecontent__bg {
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    background: url(/frame.svg) no-repeat 0 0;
-    background-size: contain
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 #iphonecontent .video {

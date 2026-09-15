@@ -3537,7 +3537,7 @@ class hn {
             r.setAttribute("aSpriteIndex", new Fe(a, 1));
             const c = s === 0 ? this.centerBallMaterial : this.ballMaterial,
                 d = new rt(r, c);
-            d.userData.baseRadius = n, d.castShadow = !0;
+            d.userData.baseRadius = n, d.castShadow = !0, d.visible = !1;
             let u, h, f;
             i ? (u = this.initialBallConfigs[s].x, h = this.initialBallConfigs[s].y, f = this.initialBallConfigs[s].z, s === 0 ? d.scale.set(n, n, n) : d.scale.set(0, 0, 0)) : (u = (Math.random() - .5) * 2, h = (Math.random() - .5) * 2, f = (Math.random() - .5) * 2, d.scale.set(0, 0, 0)), d.position.set(u, h, f), this.ballsGroup.add(d);
             const p = new B({
@@ -3570,17 +3570,10 @@ class hn {
                 releasedPos: x
             })
         }
+        this.ballsGroup.visible = !1;
     }
     popupBalls(t) {
-        const e = this.objectsToUpdate.filter(i => i.isInitialBall && i.index > 0),
-            s = e.length;
-        e.forEach((i, n) => {
-            const {
-                mesh: o,
-                baseRadius: r
-            } = i, a = n / s, c = Math.max(0, Math.min(1, (t - a) / (1 / s))), d = this.bounceEase(c) * r;
-            o.scale.set(d, d, d)
-        })
+        return;
     }
     bounceEase(t) {
         return t < 1 / 2.75 ? 7.5625 * t * t : t < 2 / 2.75 ? (t -= 1.5 / 2.75, 7.5625 * t * t + .75) : t < 2.5 / 2.75 ? (t -= 2.25 / 2.75, 7.5625 * t * t + .9375) : (t -= 2.625 / 2.75, 7.5625 * t * t + .984375)
