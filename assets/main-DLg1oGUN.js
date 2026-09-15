@@ -2538,7 +2538,7 @@ function si(e) {
         y: -3,
         duration: 1,
         ease: "none"
-    }, .3), e.timeline.fromTo(e.iphone.position, {
+    }, .3),    e.timeline.fromTo(e.iphone.position, {
         y: -.5
     }, {
         y: 0,
@@ -2571,10 +2571,10 @@ function si(e) {
         ease: "power1.inOut"
     }, .25), e.timeline.to(e.card2, {
         opacity: 0,
-        duration: .2,
-        filter: "blur(80px)",
+        duration: .15,
+        filter: "blur(40px)",
         ease: "power1.inOut"
-    }, .9), e.timeline.to(e.girlMesh.scale, {
+    }, 2.05), e.timeline.to(e.girlMesh.scale, {
         x: .11,
         y: .11,
         z: .11,
@@ -2951,15 +2951,20 @@ function si(e) {
         ease: "none"
     }, T);
     const P = document.querySelector(".features"),
-        K = P ? P.offsetHeight : 0,
-        F_start = T + .8;
+        K = P ? Math.max(P.offsetHeight, P.scrollHeight, 2600) : 2600,
+        F_start = T + .8,
+        F_duration = 7.5;
     e.timeline.fromTo(".features", {
-        top: "100%"
+        top: "100%",
+        autoAlpha: 1
     }, {
-        top: -K,
-        duration: 4.5,
+        top: -(K + 200),
+        duration: F_duration,
         ease: "none"
-    }, F_start), e.featuresTextTargetY = e.featuresTextGroupStartY, e.featuresTextCurrentY = e.featuresTextGroupStartY, e.featuresTextSpring = new I({
+    }, F_start), e.timeline.to(".features", {
+        autoAlpha: 0,
+        duration: .4
+    }, F_start + F_duration - .2), e.featuresTextTargetY = e.featuresTextGroupStartY, e.featuresTextCurrentY = e.featuresTextGroupStartY, e.featuresTextSpring = new I({
         fromValue: e.featuresTextGroupStartY,
         toValue: e.featuresTextGroupStartY,
         stiffness: 100,
@@ -2969,15 +2974,18 @@ function si(e) {
         e.featuresTextCurrentY = _.currentValue, e.featuresTextGroup && (e.featuresTextGroup.position.y = e.featuresTextCurrentY)
     }), e.timeline.to(e, {
         featuresTextTargetY: e.featuresTextGroupEndY,
-        duration: 5.5,
+        duration: F_duration - .5,
         ease: "none",
         onUpdate: () => {
             e.featuresTextSpring.updateConfig({
                 toValue: e.featuresTextTargetY
             }), e.featuresTextSpring.start()
         }
-    }, F_start);
-    const k = F_start + 4.2;
+    }, F_start), e.featuresTextGroup && e.timeline.to(e.featuresTextGroup.position, {
+        y: -100,
+        duration: .4
+    }, F_start + F_duration - .2);
+    const k = F_start + F_duration + .3;
     e.timeline.to(e.settings, {
         uMoveOutsideScreen: 0,
         duration: .8,
@@ -2990,7 +2998,8 @@ function si(e) {
         re = fe ? fe.offsetHeight : 0,
         E = window.innerHeight - 70 - re;
     e.timeline.fromTo(".footer-title", {
-        bottom: -re
+        bottom: -re,
+        autoAlpha: 1
     }, {
         bottom: E,
         duration: 2.5,
@@ -3059,10 +3068,10 @@ function ii(e) {
         ease: "power1.inOut"
     }, .25), e.timeline.to(e.card2, {
         opacity: 0,
-        duration: .2,
-        filter: "blur(80px)",
+        duration: .15,
+        filter: "blur(40px)",
         ease: "power1.inOut"
-    }, .9), e.timeline.to(e.girlMesh.scale, {
+    }, 2.05), e.timeline.to(e.girlMesh.scale, {
         x: .11,
         y: .11,
         z: .11,
@@ -3350,15 +3359,20 @@ function ii(e) {
         ease: "none"
     }, m);
     const M = document.querySelector(".features"),
-        R = M ? M.offsetHeight : 0,
-        F_start_mob = m + .8;
+        R = M ? Math.max(M.offsetHeight, M.scrollHeight, 2600) : 2600,
+        F_start_mob = m + .8,
+        F_duration_mob = 7.5;
     e.timeline.fromTo(".features", {
-        y: window.innerHeight + 100
+        y: window.innerHeight + 100,
+        autoAlpha: 1
     }, {
-        y: -R,
-        duration: 4.5,
+        y: -(R + 200),
+        duration: F_duration_mob,
         ease: "none"
-    }, F_start_mob), e.featuresTextTargetY = e.featuresTextGroupStartY, e.featuresTextCurrentY = e.featuresTextGroupStartY, e.featuresTextSpring = new I({
+    }, F_start_mob), e.timeline.to(".features", {
+        autoAlpha: 0,
+        duration: .4
+    }, F_start_mob + F_duration_mob - .2), e.featuresTextTargetY = e.featuresTextGroupStartY, e.featuresTextCurrentY = e.featuresTextGroupStartY, e.featuresTextSpring = new I({
         fromValue: e.featuresTextGroupStartY,
         toValue: e.featuresTextGroupStartY,
         stiffness: 100,
@@ -3368,15 +3382,18 @@ function ii(e) {
         e.featuresTextCurrentY = E.currentValue, e.featuresTextGroup && (e.featuresTextGroup.position.y = e.featuresTextCurrentY)
     }), e.timeline.to(e, {
         featuresTextTargetY: e.featuresTextGroupEndY,
-        duration: 5.5,
+        duration: F_duration_mob - .5,
         ease: "none",
         onUpdate: () => {
             e.featuresTextSpring.updateConfig({
                 toValue: e.featuresTextTargetY
             }), e.featuresTextSpring.start()
         }
-    }, F_start_mob);
-    const C = F_start_mob + 4.2;
+    }, F_start_mob), e.featuresTextGroup && e.timeline.to(e.featuresTextGroup.position, {
+        y: -100,
+        duration: .4
+    }, F_start_mob + F_duration_mob - .2);
+    const C = F_start_mob + F_duration_mob + .3;
     e.timeline.to(e.settings, {
         uMoveOutsideScreen: 0,
         duration: .8,
@@ -3389,7 +3406,8 @@ function ii(e) {
         K = P ? P.offsetHeight : 0,
         fe = window.innerHeight - 40 - K;
     e.timeline.fromTo(".footer-title", {
-        bottom: -K - 100
+        bottom: -K - 100,
+        autoAlpha: 1
     }, {
         bottom: fe,
         duration: 2.5,
@@ -3430,7 +3448,7 @@ class li {
         this.cssCamera = new Pe(n * this.aspect / -2, n * this.aspect / 2, n / 2, n / -2, -1e3, 1e3), this.cssCamera.position.set(0, 0, 500), this.cssCamera.lookAt(0, 0, 0), s = 10, this.camera.position.set(0, 0, 10), this.camera1.position.set(0, 0, 30), this.camera1.lookAt(0, 0, 0), this.camera1.updateProjectionMatrix(), this.time = 0, this.clock = new Wt, this.mouse = new pe, this.iphoneMouseRotY = 0, this.pmremGenerator = new Zt(this.renderer), this.envMap = this.pmremGenerator.fromScene(new ss, .04).texture, this.setUpSettings()
     }
     mainTimeline() {
-        this.mobile ? ii(this) : si(this)
+        si(this)
     }
     async init() {
         this.onProgress(.1), await this.initGravityBalls(), this.onProgress(.3), await this.initGallery(), this.onProgress(.5), await this.initStaticBalls(), this.onProgress(.6), this.setupFrontScene(), this.addLights(this.glassScene), this.onProgress(.7), await this.addObjects(), this.buildMainFlowArray(), this.onProgress(.8), this.addRatedImage(), this.addGradientBackground(), this.onProgress(.9), this.mainTimeline(), this.introTimeline(), this.setupFeatureHover(), this.resize(), this.setupResize(), this.setMobileProperties(), this.onProgress(1), this.render()
@@ -3665,7 +3683,7 @@ Start relaxing` : "Stop driving. Start relaxing";
         let t = 1;
         this.orthoCamera && (this.orthoCamera.left = t * this.aspect / -2, this.orthoCamera.right = t * this.aspect / 2, this.orthoCamera.top = t / 2, this.orthoCamera.bottom = t / -2, this.orthoCamera.updateProjectionMatrix()), this.cssCamera && (this.cssCamera.left = 1e3 * this.aspect / -2, this.cssCamera.right = 1e3 * this.aspect / 2, this.cssCamera.top = 1e3 / 2, this.cssCamera.bottom = 1e3 / -2, this.cssCamera.updateProjectionMatrix()), this.glassmesh && this.glassmesh.scale.set(this.aspect + 0, 1, 1), this.circlePlane && (this.circlePlane.material.uniforms.uAspect.value = this.aspect, this.circlePlane.scale.set(this.aspect, 1, 1)), this.gravityBalls && this.gravityBalls.onResize(this.width, this.height), this.gallery && this.gallery.onResize(this.width, this.height), this.updateStaticBallsTarget(), this.scaleTextToViewport(), this.positionRatedImage();
         if (this.mobile && this.iphone) {
-            const fitScale = Math.min((this.aspect * 0.82) / 0.1659, 0.68 / 0.3350);
+            const fitScale = Math.min((this.aspect * 0.72) / 0.1659, 0.50 / 0.3350);
             this.iphone.scale.set(fitScale, fitScale, fitScale);
             this.iphone.userData.scale1 = fitScale;
             this.iphone.userData.scale2 = fitScale;
@@ -3685,22 +3703,19 @@ Start relaxing` : "Stop driving. Start relaxing";
     }
     scaleTextToViewport() {
         if (!this.textMeshes || !this.textMeshes[0] || !this.camera) return;
-        if (this.mobile) {
-            this.textMeshes.forEach(p => { p.visible = false; });
-            return;
-        } else {
-            this.textMeshes.forEach(p => { p.visible = true; });
+        this.textMeshes.forEach(p => { p.visible = true; });
+        const t = this.textMeshes[0];
+        if (t.geometry && !t.geometry.boundingBox) {
+            t.geometry.computeBoundingBox();
         }
-        const t = this.textMeshes[0],
-            s = t.geometry?.boundingBox;
-        if (!s) return;
-        const n = s.max.x - s.min.x;
+        const s = t.geometry?.boundingBox;
+        const n = s ? (s.max.x - s.min.x) : 18;
         if (n <= 0) return;
         const i = t.position.z || 0,
             r = this.camera.position.z - i,
             u = this.camera.fov * (Math.PI / 180),
             a = 2 * Math.tan(u / 2) * r,
-            h = a * this.aspect * .95 / n;
+            h = this.mobile ? (a * this.aspect * 2.2 / n) : (a * this.aspect * .95 / n);
         this.textMeshes.forEach(p => {
             p.scale.set(h, h, h)
         }), this.viewportTop = a / 2, this.textMeshes[1] && (this.textMeshes[1].position.y = this.viewportTop + a)
@@ -3832,7 +3847,7 @@ then relax on your way.`],
             n = this.mobile ? s : t;
         this.textGroup = new Y, this.behindScene.add(this.textGroup), this.textMeshes = [], n.forEach((f, g) => {
             let w = this.getBackgroundText(f);
-            w.position.y = 16, w.outlineOpacity = g != 4 ? .1 : 0, g === 4 && (w.position.y = 6), g === 5 && (w.outlineOpacity = 0, w.position.y = 4, w.position.x = -7, w.fillOpacity = 0), g === 7 && (w.position.y = 100), this.textGroup.add(w), this.textMeshes.push(w)
+            w.position.y = 16, w.outlineOpacity = g != 4 ? (this.mobile ? .18 : .1) : 0, this.mobile && (w.outlineWidth = .14), g === 4 && (w.position.y = 6), g === 5 && (w.outlineOpacity = 0, w.position.y = 4, w.position.x = -7, w.fillOpacity = 0), g === 7 && (w.position.y = 100), this.textGroup.add(w), this.textMeshes.push(w)
         }), await Promise.all(this.textMeshes.map((f, g) => new Promise(w => {
             f.sync(() => {
                 g === 0 && this.scaleTextToViewport(), w()
@@ -4103,8 +4118,9 @@ then relax on your way.`],
         });
         let u, a;
         if (this.mobile) {
-            const fitScale = Math.min((this.aspect * 0.82) / 0.1659, 0.68 / 0.3350);
+            const fitScale = Math.min((this.aspect * 0.72) / 0.1659, 0.50 / 0.3350);
             u = fitScale, a = fitScale, this.iphone.scale.set(fitScale, fitScale, fitScale);
+            this.iphone.position.y = 0;
         } else {
             u = .85 * 1 / i.y, a = u * 2, this.iphone.scale.set(a, a, a);
         }
@@ -4346,7 +4362,7 @@ class fi {
             dom: document.getElementById("container"),
             maxScroll: this.maxScroll,
             onProgress: t => this.updateLoader(t)
-        }), this.init(), ns(), Tt(), os()
+        }), window.app = this, window.canvas = this.canvas, this.init(), ns(), Tt(), os()
     }
     updateLoader(t) {
         this.loadProgress = Math.round(t * 100);
